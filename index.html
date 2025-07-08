@@ -317,10 +317,57 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Property Details Section */
+        .details-section {
+            background: white;
+            padding: 4rem 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .detail-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .detail-card:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .detail-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2a5298;
+        }
+
+        .detail-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-value {
+            font-size: 1.5rem;
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
         /* Floor Plans Section */
         .floors-section {
             padding: 4rem 1rem;
-            background: white;
+            background: #f8f9fa;
         }
 
         .floors-grid {
@@ -336,6 +383,7 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+            background: white;
         }
 
         .floor-card:hover {
@@ -356,7 +404,7 @@
 
         .floor-info {
             padding: 2rem;
-            background: #f8f9fa;
+            background: white;
         }
 
         .floor-label {
@@ -397,7 +445,7 @@
         /* Gallery Grid Section */
         .gallery-grid-section {
             padding: 4rem 1rem;
-            background: #f8f9fa;
+            background: white;
         }
 
         .gallery-grid {
@@ -482,6 +530,33 @@
         .contact-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0d1b2a;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .footer-copyright {
+            font-size: 13px;
+            opacity: 0.7;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 15px;
         }
 
         /* Lightbox */
@@ -657,6 +732,43 @@
         </div>
     </section>
 
+    <!-- Property Details -->
+    <section class="details-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Property Details</h2>
+                <p class="section-subtitle">Essential information about this commercial space</p>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="detail-icon">📐</div>
+                    <div class="detail-title">Floor Area</div>
+                    <div class="detail-value">Available</div>
+                    <p>Spacious layout</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">💡</div>
+                    <div class="detail-title">Utilities</div>
+                    <div class="detail-value">Complete</div>
+                    <p>Electricity & Water ready</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">📅</div>
+                    <div class="detail-title">Availability</div>
+                    <div class="detail-value">Immediate</div>
+                    <p>Move-in ready</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">🏪</div>
+                    <div class="detail-title">Ideal For</div>
+                    <div class="detail-value">Any Business</div>
+                    <p>Retail, Office, Clinic</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Floor Plans -->
     <section class="floors-section">
         <div class="container">
@@ -761,6 +873,15 @@
             <a href="#" class="cta-primary" onclick="alert('Add your contact information here')">Get in Touch Now</a>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Commercial Space for Rent - 667 Capitol Blvd, San Fernando, Pampanga</p>
+            <p class="footer-text">For inquiries, please contact property owners</p>
+            <p class="footer-copyright">© 2024 All Rights Reserved. Property of 667 Capitol Blvd.</p>
+        </div>
+    </footer>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
