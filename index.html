@@ -1,1065 +1,1483 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>667 Capitol Boulevard Commercial Property for Lease</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-        }
-
-        /* Hero Section with Carousel */
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            min-height: 600px;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        .carousel-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .carousel-slide.active {
-            opacity: 1;
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .carousel-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #1e3c72 0%, #2a5298 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-        }
-
-        /* Hero Overlay Content */
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            z-index: 10;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-            animation: slideUp 1s ease-out;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>667 Capitol Boulevard Commercial Property for Lease</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
-            to {
-                transform: translateY(0);
+
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    sans-serif;
+                line-height: 1.6;
+                color: #333;
+                background-color: #fff;
+            }
+
+            /* Links */
+            a.contact-method,
+            a.footer-text {
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+
+            /* Hero Section with Carousel */
+            .hero-section {
+                position: relative;
+                height: 100vh;
+                min-height: 600px;
+                overflow: hidden;
+                background: #000;
+            }
+
+            .carousel-container {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+
+            .carousel-slide {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
+            }
+
+            .carousel-slide.active {
                 opacity: 1;
             }
-        }
 
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            margin-bottom: 1rem;
-            backdrop-filter: blur(10px);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .hero-features {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-feature {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-primary {
-            background: #ff6b6b;
-            color: white;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(255,107,107,0.4);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-primary:hover {
-            background: #ff5252;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(255,107,107,0.6);
-        }
-
-        .cta-secondary {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            padding: 1rem 2.5rem;
-            border: 2px solid white;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-secondary:hover {
-            background: white;
-            color: #1e3c72;
-        }
-
-        /* Carousel Controls */
-        .carousel-controls {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 20;
-        }
-
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-dot.active {
-            background: white;
-            width: 40px;
-            border-radius: 6px;
-        }
-
-        /* Sticky Info Bar */
-        .info-bar {
-            background: #1e3c72;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .info-bar-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .info-location {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .info-contact {
-            background: rgba(255,255,255,0.2);
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .info-contact:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
-        /* Key Features Section */
-        .features-section {
-            padding: 4rem 1rem;
-            background: #f8f9fa;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: #1e3c72;
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-            border-color: #2a5298;
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .feature-title {
-            font-size: 1.5rem;
-            color: #1e3c72;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Property Details Section */
-        .details-section {
-            background: white;
-            padding: 4rem 1rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .detail-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid #e9ecef;
-            transition: all 0.3s ease;
-        }
-
-        .detail-card:hover {
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-        }
-
-        .detail-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #2a5298;
-        }
-
-        .detail-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #1e3c72;
-            margin-bottom: 0.5rem;
-        }
-
-        .detail-value {
-            font-size: 1.5rem;
-            color: #ff6b6b;
-            font-weight: bold;
-        }
-
-        /* Floor Plans Section */
-        .floors-section {
-            padding: 4rem 1rem;
-            background: #f8f9fa;
-        }
-
-        .floors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .floor-card {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            background: white;
-        }
-
-        .floor-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .floor-image {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6c757d;
-            font-size: 1.2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .floor-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .floor-info {
-            padding: 2rem;
-            background: white;
-        }
-
-        .floor-label {
-            background: #ff6b6b;
-            color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        .floor-title {
-            font-size: 1.8rem;
-            color: #1e3c72;
-            margin-bottom: 1rem;
-        }
-
-        .floor-features {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .floor-features li {
-            padding: 0.5rem 0;
-            color: #666;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .floor-features li::before {
-            content: "✓";
-            color: #28a745;
-            font-weight: bold;
-        }
-
-        /* Gallery Grid Section */
-        .gallery-grid-section {
-            padding: 4rem 1rem;
-            background: white;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            height: 200px;
-            background: #e9ecef;
-            transition: all 0.3s ease;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-            z-index: 10;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .gallery-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6c757d;
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 1rem;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: #1e3c72;
-            color: white;
-            padding: 4rem 1rem;
-            text-align: center;
-        }
-
-        .contact-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .contact-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .contact-method {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .contact-method:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-5px);
-        }
-
-        .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Footer */
-        .footer {
-            background: #0d1b2a;
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-text {
-            font-size: 14px;
-            margin-bottom: 10px;
-            opacity: 0.9;
-        }
-
-        .footer-copyright {
-            font-size: 13px;
-            opacity: 0.7;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            margin-top: 15px;
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
-            position: relative;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 3rem;
-            cursor: pointer;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-title {
+            .carousel-slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .carousel-placeholder {
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, #1e3c72 0%, #2a5298 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
                 font-size: 2rem;
             }
 
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero-section {
-                min-height: 500px;
-            }
-
-            .info-bar-content {
+            /* Hero Overlay Content */
+            .hero-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.3) 0%,
+                    rgba(0, 0, 0, 0.6) 100%
+                );
+                display: flex;
+                align-items: center;
                 justify-content: center;
                 text-align: center;
+                color: white;
+                z-index: 10;
+            }
+
+            .hero-content {
+                max-width: 800px;
+                padding: 2rem;
+                animation: slideUp 1s ease-out;
+            }
+
+            @keyframes slideUp {
+                from {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            .hero-badge {
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.2);
+                padding: 0.5rem 1.5rem;
+                border-radius: 30px;
+                margin-bottom: 1rem;
+                backdrop-filter: blur(10px);
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 600;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+                opacity: 0.9;
+            }
+
+            .hero-features {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                margin-bottom: 2rem;
+                flex-wrap: wrap;
+            }
+
+            .hero-feature {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 1.1rem;
             }
 
             .cta-buttons {
-                flex-direction: column;
-                width: 100%;
-                padding: 0 2rem;
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
             }
 
-            .cta-primary,
+            .cta-primary {
+                background: #ff6b6b;
+                color: white;
+                padding: 1rem 2.5rem;
+                border: none;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .cta-primary:hover {
+                background: #ff5252;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 30px rgba(255, 107, 107, 0.6);
+            }
+
             .cta-secondary {
-                width: 100%;
+                background: rgba(255, 255, 255, 0.2);
+                color: white;
+                padding: 1rem 2.5rem;
+                border: 2px solid white;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .cta-secondary:hover {
+                background: white;
+                color: #1e3c72;
+            }
+
+            /* Carousel Controls */
+            .carousel-controls {
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                gap: 10px;
+                z-index: 20;
+            }
+
+            .carousel-dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .carousel-dot.active {
+                background: white;
+                width: 40px;
+                border-radius: 6px;
+            }
+
+            /* Sticky Info Bar */
+            .info-bar {
+                background: #1e3c72;
+                color: white;
+                padding: 1rem;
                 text-align: center;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .info-bar-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .info-location {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .info-contact {
+                background: rgba(255, 255, 255, 0.2);
+                padding: 0.5rem 1.5rem;
+                border-radius: 25px;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+            .info-contact:hover {
+                background: rgba(255, 255, 255, 0.3);
+            }
+
+            /* Key Features Section */
+            .features-section {
+                padding: 4rem 1rem;
+                background: #f8f9fa;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .section-header {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                color: #1e3c72;
+                margin-bottom: 1rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.2rem;
+                color: #666;
+            }
+
+            .features-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+            }
+
+            .feature-card {
+                background: white;
+                padding: 2rem;
+                border-radius: 12px;
+                text-align: center;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+                transition: all 0.3s ease;
+                border: 2px solid transparent;
+            }
+
+            .feature-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+                border-color: #2a5298;
+            }
+
+            .feature-icon {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+                display: inline-block;
+                animation: bounce 2s infinite;
+            }
+
+            @keyframes bounce {
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+
+            .feature-title {
+                font-size: 1.5rem;
+                color: #1e3c72;
+                margin-bottom: 0.5rem;
+            }
+
+            /* Property Details Section */
+            .details-section {
+                background: white;
+                padding: 4rem 1rem;
+                border-bottom: 1px solid #eee;
+            }
+
+            .details-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+
+            .detail-card {
+                background: #f8f9fa;
+                padding: 2rem;
+                border-radius: 12px;
+                text-align: center;
+                border: 1px solid #e9ecef;
+                transition: all 0.3s ease;
+            }
+
+            .detail-card:hover {
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+                transform: translateY(-2px);
+            }
+
+            .detail-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                color: #2a5298;
+            }
+
+            .detail-title {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: #1e3c72;
+                margin-bottom: 0.5rem;
+            }
+
+            .detail-value {
+                font-size: 1.5rem;
+                color: #ff6b6b;
+                font-weight: bold;
+            }
+
+            /* Floor Plans Section */
+            .floors-section {
+                padding: 4rem 1rem;
+                background: #f8f9fa;
             }
 
             .floors-grid {
-                grid-template-columns: 1fr;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 3rem;
+                margin-top: 3rem;
+            }
+
+            .floor-card {
+                position: relative;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                background: white;
+            }
+
+            .floor-card:hover {
+                transform: scale(1.02);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            }
+
+            .floor-image {
+                width: 100%;
+                height: 300px;
+                background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #6c757d;
+                font-size: 1.2rem;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .floor-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .floor-info {
+                padding: 2rem;
+                background: white;
+            }
+
+            .floor-label {
+                background: #ff6b6b;
+                color: white;
+                padding: 0.3rem 1rem;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                display: inline-block;
+                margin-bottom: 1rem;
+            }
+
+            .floor-title {
+                font-size: 1.8rem;
+                color: #1e3c72;
+                margin-bottom: 1rem;
+            }
+
+            .floor-features {
+                list-style: none;
+                margin-top: 1rem;
+            }
+
+            .floor-features li {
+                padding: 0.5rem 0;
+                color: #666;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .floor-features li::before {
+                content: "✓";
+                color: #28a745;
+                font-weight: bold;
+            }
+
+            /* Gallery Grid Section */
+            .gallery-grid-section {
+                padding: 4rem 1rem;
+                background: white;
             }
 
             .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
+                margin-top: 2rem;
             }
-        }
-    </style>
-</head>
-<body>
-    <!-- Hero Section with Carousel -->
-    <section class="hero-section">
-        <div class="carousel-container">
-            <div class="carousel-slide active">
-                <img src="/images/outside-3.jpg" alt="Main Building Photo">
-                <!-- Fallback placeholder if image doesn't load -->
-                <div class="carousel-placeholder" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
-                    <span></span>
-                </div>
-            </div>
-            <div class="carousel-slide">
-                <img src="/images/outside-1.jpg" alt="Interior Space Photo">
-                <!-- Fallback placeholder if image doesn't load -->
-                <div class="carousel-placeholder" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
-                    <span></span>
-                </div>
-            </div>
-            <div class="carousel-slide">
-                <img src="/images/outside-2.jpg" alt="Street View Photo">
-                <!-- Fallback placeholder if image doesn't load -->
-                <div class="carousel-placeholder" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
-                    <span></span>
-                </div>
-            </div>
-        </div>
 
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <div class="hero-badge">Now Available</div>
-                <h1 class="hero-title">667 Capitol Boulevard Commercial Property for Lease</h1>
-                <p class="hero-subtitle">Prime Location near Capitol Town Megaworld</p>
+            .gallery-item {
+                position: relative;
+                border-radius: 8px;
+                overflow: hidden;
+                cursor: pointer;
+                height: 200px;
+                background: #e9ecef;
+                transition: all 0.3s ease;
+            }
 
-                <div class="hero-features">
-                    <div class="hero-feature">
-                        <span>📍</span>
-                        <span>High Traffic Area</span>
+            .gallery-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .gallery-item:hover {
+                transform: scale(1.05);
+                z-index: 10;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .gallery-placeholder {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #6c757d;
+                font-size: 0.9rem;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            /* Contact Section */
+            .contact-section {
+                background: #1e3c72;
+                color: white;
+                padding: 4rem 1rem;
+                text-align: center;
+            }
+
+            .contact-content {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .contact-title {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .contact-subtitle {
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+                opacity: 0.9;
+            }
+
+            .contact-methods {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 2rem;
+                margin: 3rem 0;
+            }
+
+            .contact-method {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 2rem;
+                border-radius: 12px;
+                backdrop-filter: blur(10px);
+                transition: all 0.3s ease;
+            }
+
+            .contact-method:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateY(-5px);
+            }
+
+            .contact-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Footer */
+            .footer {
+                background: #0d1b2a;
+                color: white;
+                padding: 2rem 1rem;
+                text-align: center;
+            }
+
+            .footer-content {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .footer-text {
+                font-size: 14px;
+                margin-bottom: 10px;
+                opacity: 0.9;
+            }
+
+            .footer-copyright {
+                font-size: 13px;
+                opacity: 0.7;
+                padding-top: 15px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                margin-top: 15px;
+            }
+
+            /* Lightbox */
+            .lightbox {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.95);
+                z-index: 1000;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .lightbox.active {
+                display: flex;
+            }
+
+            .lightbox-content {
+                max-width: 90%;
+                max-height: 90%;
+                position: relative;
+            }
+
+            .lightbox-close {
+                position: absolute;
+                top: -40px;
+                right: 0;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 3rem;
+                cursor: pointer;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                .hero-title {
+                    font-size: 2rem;
+                }
+
+                .hero-subtitle {
+                    font-size: 1.2rem;
+                }
+
+                .hero-section {
+                    min-height: 500px;
+                }
+
+                .info-bar-content {
+                    justify-content: center;
+                    text-align: center;
+                }
+
+                .cta-buttons {
+                    flex-direction: column;
+                    width: 100%;
+                    padding: 0 2rem;
+                }
+
+                .cta-primary,
+                .cta-secondary {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .floors-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .gallery-grid {
+                    grid-template-columns: repeat(
+                        auto-fill,
+                        minmax(150px, 1fr)
+                    );
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Hero Section with Carousel -->
+        <section class="hero-section">
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <img
+                        src="/images/outside-3.jpg"
+                        alt="Main Building Photo"
+                    />
+                    <!-- Fallback placeholder if image doesn't load -->
+                    <div
+                        class="carousel-placeholder"
+                        style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: -1;
+                        "
+                    >
+                        <span></span>
                     </div>
-                    <div class="hero-feature">
-                        <span>🏢</span>
-                        <span>Two Floors Available</span>
+                </div>
+                <div class="carousel-slide">
+                    <img src="/images/outside-1.jpg" alt="Building Space" />
+                    <!-- Fallback placeholder if image doesn't load -->
+                    <div
+                        class="carousel-placeholder"
+                        style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: -1;
+                        "
+                    >
+                        <span></span>
                     </div>
-                    <div class="hero-feature">
-                        <span>🚗</span>
-                        <span>Ample Parking</span>
+                </div>
+                <div class="carousel-slide">
+                    <img src="/images/outside-2.jpg" alt="Street View Photo" />
+                    <!-- Fallback placeholder if image doesn't load -->
+                    <div
+                        class="carousel-placeholder"
+                        style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: -1;
+                        "
+                    >
+                        <span></span>
                     </div>
                 </div>
-
-                <div class="cta-buttons">
-                    <a href="#contact" class="cta-primary">Schedule Viewing</a>
-                    <a href="#gallery" class="cta-secondary">View Gallery</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="carousel-controls">
-            <span class="carousel-dot active" onclick="currentSlide(1)"></span>
-            <span class="carousel-dot" onclick="currentSlide(2)"></span>
-            <span class="carousel-dot" onclick="currentSlide(3)"></span>
-        </div>
-    </section>
-
-    <!-- Sticky Info Bar -->
-    <div class="info-bar">
-        <div class="info-bar-content">
-            <div class="info-location">
-                <span>📍</span>
-                <span>667 Capitol Blvd (Sto. Nino), San Fernando, Pampanga</span>
-            </div>
-            <div class="info-contact">
-                <span>📞 Contact for Pricing</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Key Features -->
-    <section class="features-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Choose This Location?</h2>
-                <p class="section-subtitle">The property was just completed in January 2025 and is now ready for leasing. It is located in the heart of Megaworld’s Capital Town development on the main road of Capitol Boulevard, a block away from the biggest McDonald’s restaurant, and just across the Megaworld Bryant Tower and Megaworld Chelsea Tower condominiums. The commercial space consists of two floors with over 100 sqm. on each floor. The stalls on each floor are unfinished, so tenants can easily modify to suit their business needs. The commercial spaces are best suited for a Bank, Coffee shop, Convenient store, Restaurant, Retail store, Medical/Dental offices, and Lawyers Office.</p>
             </div>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title">Strategic Location</h3>
-                    <p>Located on busy Capitol Boulevard with high foot traffic and excellent visibility</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏗️</div>
-                    <h3 class="feature-title">Flexible Space</h3>
-                    <p>Adaptable layouts perfect for retail, offices, clinics, or service businesses</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Move-in Ready</h3>
-                    <p>Well-maintained units with complete utilities and immediate availability</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <div class="hero-badge">Now Available</div>
+                    <h1 class="hero-title">
+                        667 Capitol Boulevard Commercial Property for Lease
+                    </h1>
+                    <p class="hero-subtitle">
+                        Prime Location near Capitol Town Megaworld
+                    </p>
 
-    <!-- Property Details -->
-    <section class="details-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Property Details</h2>
-                <p class="section-subtitle">Essential information about this commercial space</p>
-            </div>
-
-            <div class="details-grid">
-                <div class="detail-card">
-                    <div class="detail-icon">📐</div>
-                    <div class="detail-title">Stall Sizes</div>
-                    <div class="detail-value">Various</div>
-                    <p>Multiple stall options</p>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-icon">💡</div>
-                    <div class="detail-title">Utilities</div>
-                    <div class="detail-value">Available</div>
-                    <p>Basic connections ready</p>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-icon">🔨</div>
-                    <div class="detail-title">Condition</div>
-                    <div class="detail-value">Customizable</div>
-                    <p>Ready for renovation</p>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-icon">🏪</div>
-                    <div class="detail-title">Ideal For</div>
-                    <div class="detail-value">Any Business</div>
-                    <p>Retail, Office, Clinic, Cafes</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Floor Plans -->
-    <section class="floors-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Available Spaces</h2>
-                <p class="section-subtitle">Choose the perfect floor for your business</p>
-            </div>
-
-            <div class="floors-grid">
-                <div class="floor-card">
-                    <div class="floor-image">
-                        <img src="/images/first-1.jpg" alt="First Floor Layout" style="width: 100%; height: 100%; object-fit: cover;">
-                        <!-- Fallback placeholder if image doesn't load -->
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: -1;">
-                            <span>📐 First Floor Layout</span>
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <span>📍</span>
+                            <span>High Traffic Area</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span>🏢</span>
+                            <span>Two Floors Available</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span>🚗</span>
+                            <span>Ample Parking</span>
                         </div>
                     </div>
-                    <div class="floor-info">
-                        <span class="floor-label">Ground Floor</span>
-                        <h3 class="floor-title">First Floor Commercial</h3>
-                        <p>Perfect for retail businesses with direct street access</p>
-                        <ul class="floor-features">
-                            <li>Street-level entrance</li>
-                            <li>High visibility storefront</li>
-                            <li>Customer parking</li>
-                        </ul>
+
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-primary"
+                            >Schedule Viewing</a
+                        >
+                        <a href="#gallery" class="cta-secondary"
+                            >View Gallery</a
+                        >
                     </div>
                 </div>
+            </div>
 
-                <div class="floor-card">
-                    <div class="floor-image">
-                        <img src="/images/second-7.jpg" alt="Second Floor Layout" style="width: 100%; height: 100%; object-fit: cover;">
-                        <!-- Fallback placeholder if image doesn't load -->
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: -1;">
-                            <span>📐 Second Floor Layout</span>
+            <div class="carousel-controls">
+                <span
+                    class="carousel-dot active"
+                    onclick="currentSlide(1)"
+                ></span>
+                <span class="carousel-dot" onclick="currentSlide(2)"></span>
+                <span class="carousel-dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+
+        <!-- Sticky Info Bar -->
+        <div class="info-bar">
+            <div class="info-bar-content">
+                <div class="info-location">
+                    <span>📍</span>
+                    <span
+                        >667 Capitol Blvd (Sto. Nino), San Fernando,
+                        Pampanga</span
+                    >
+                </div>
+                <div class="info-contact">
+                    <span>📞 <a href="#contact">Contact for Pricing</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Features -->
+        <section class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Why Choose This Location?</h2>
+                    <p class="section-subtitle">
+                        The property was just completed in January 2025 and is
+                        now ready for leasing. It is located in the heart of
+                        Megaworld’s Capital Town development on the main road of
+                        Capitol Boulevard, a block away from the biggest
+                        McDonald’s restaurant, and just across the Megaworld
+                        Bryant Tower and Megaworld Chelsea Tower condominiums.
+                        The commercial space consists of two floors with over
+                        100 sqm. on each floor. The stalls on each floor are
+                        unfinished, so tenants can easily modify to suit their
+                        business needs. The commercial spaces are best suited
+                        for a Bank, Coffee shop, Convenient store, Restaurant,
+                        Retail store, Medical/Dental offices, and Lawyers
+                        Office.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3 class="feature-title">Strategic Location</h3>
+                        <p>
+                            Located on busy Capitol Boulevard with high foot
+                            traffic and excellent visibility
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏗️</div>
+                        <h3 class="feature-title">Flexible Space</h3>
+                        <p>
+                            Adaptable layouts perfect for retail, offices,
+                            clinics, or service businesses
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Move-in Ready</h3>
+                        <p>
+                            Well-maintained units with complete utilities and
+                            immediate availability
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Property Details -->
+        <section class="details-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Property Details</h2>
+                    <p class="section-subtitle">
+                        Essential information about this commercial space
+                    </p>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <div class="detail-icon">📐</div>
+                        <div class="detail-title">Stall Sizes</div>
+                        <div class="detail-value">Various</div>
+                        <p>Multiple stall options</p>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">💡</div>
+                        <div class="detail-title">Utilities</div>
+                        <div class="detail-value">Available</div>
+                        <p>Basic connections ready</p>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">🔨</div>
+                        <div class="detail-title">Condition</div>
+                        <div class="detail-value">Customizable</div>
+                        <p>Ready for renovation</p>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">🏪</div>
+                        <div class="detail-title">Ideal For</div>
+                        <div class="detail-value">Any Business</div>
+                        <p>Retail, Office, Clinic, Cafes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Floor Plans -->
+        <section class="floors-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Available Spaces</h2>
+                    <p class="section-subtitle">
+                        Choose the perfect floor for your business
+                    </p>
+                </div>
+
+                <div class="floors-grid">
+                    <div class="floor-card">
+                        <div class="floor-image">
+                            <img
+                                src="/images/first-1.jpg"
+                                alt="First Floor Layout"
+                                style="
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                "
+                            />
+                            <!-- Fallback placeholder if image doesn't load -->
+                            <div
+                                style="
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    z-index: -1;
+                                "
+                            >
+                                <span>📐 First Floor Layout</span>
+                            </div>
+                        </div>
+                        <div class="floor-info">
+                            <span class="floor-label">Ground Floor</span>
+                            <h3 class="floor-title">First Floor Commercial</h3>
+                            <p>
+                                Perfect for retail businesses with direct street
+                                access
+                            </p>
+                            <ul class="floor-features">
+                                <li>Street-level entrance</li>
+                                <li>High visibility storefront</li>
+                                <li>Customer parking</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="floor-info">
-                        <span class="floor-label">Upper Floor</span>
-                        <h3 class="floor-title">Second Floor Office</h3>
-                        <p>Quiet professional space for offices and services</p>
-                        <ul class="floor-features">
-                            <li>Private office environments</li>
-                            <li>Multiple stalls</li>
-                            <li>Professional atmosphere</li>
-                        </ul>
+
+                    <div class="floor-card">
+                        <div class="floor-image">
+                            <img
+                                src="/images/second-7.jpg"
+                                alt="Second Floor Layout"
+                                style="
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                "
+                            />
+                            <!-- Fallback placeholder if image doesn't load -->
+                            <div
+                                style="
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    z-index: -1;
+                                "
+                            >
+                                <span>📐 Second Floor Layout</span>
+                            </div>
+                        </div>
+                        <div class="floor-info">
+                            <span class="floor-label">Upper Floor</span>
+                            <h3 class="floor-title">Second Floor Office</h3>
+                            <p>
+                                Quiet professional space for offices and
+                                services
+                            </p>
+                            <ul class="floor-features">
+                                <li>Private office environments</li>
+                                <li>Multiple stalls</li>
+                                <li>Professional atmosphere</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Gallery Grid -->
-    <section class="gallery-grid-section" id="gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Property Gallery</h2>
-                <p class="section-subtitle">Click any image to view larger</p>
+        <!-- Gallery Grid -->
+        <section class="gallery-grid-section" id="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Property Gallery</h2>
+                    <p class="section-subtitle">
+                        Click any image to view larger
+                    </p>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openLightbox(1)">
+                        <img
+                            src="/images/outside-1.jpg"
+                            alt="Building Exterior"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Building Exterior
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(1)">
+                        <img
+                            src="/images/outside-2.jpg"
+                            alt="Building Exterior"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Building Exterior
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(1)">
+                        <img
+                            src="/images/outside-3.jpg"
+                            alt="Building Exterior"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Building Exterior
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(1)">
+                        <img
+                            src="/images/outside-4.jpg"
+                            alt="Building Exterior"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Building Exterior
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(2)">
+                        <img
+                            src="/images/first-1.jpg"
+                            alt="First Floor Interior"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            First Floor Interior
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(2)">
+                        <img
+                            src="/images/first-2.jpg"
+                            alt="First Floor Interior"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            First Floor Interior
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(3)">
+                        <img
+                            src="/images/second-1.jpg"
+                            alt="Second Floor Space"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Second Floor Space
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(3)">
+                        <img
+                            src="/images/second-2.jpg"
+                            alt="Second Floor Space"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Second Floor Space
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(3)">
+                        <img
+                            src="/images/second-3.jpg"
+                            alt="Second Floor Space"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Second Floor Space
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(3)">
+                        <img
+                            src="/images/second-4.jpg"
+                            alt="Second Floor Space"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Second Floor Space
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(3)">
+                        <img
+                            src="/images/second-5.jpg"
+                            alt="Second Floor Space"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Second Floor Space
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(3)">
+                        <img
+                            src="/images/second-6.jpg"
+                            alt="Second Floor Space"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Second Floor Space
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(3)">
+                        <img
+                            src="/images/second-7.jpg"
+                            alt="Second Floor Space"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Second Floor Space
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(3)">
+                        <img
+                            src="/images/second-8.jpg"
+                            alt="Second Floor Space"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Second Floor Space
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(3)">
+                        <img
+                            src="/images/second-9.jpg"
+                            alt="Second Floor Space"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Second Floor Space
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(4)">
+                        <img
+                            src="/images/inside-1.jpg"
+                            alt="Street View"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Stall Space
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(4)">
+                        <img
+                            src="/images/inside-2.jpg"
+                            alt="Street View"
+                            style="width: 100%; height: 100%; object-fit: cover"
+                        />
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div
+                            class="gallery-placeholder"
+                            style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                            "
+                        >
+                            Larger Stall Space
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="gallery-grid">
-                <div class="gallery-item" onclick="openLightbox(1)">
-                    <img src="/images/outside-1.jpg" alt="Building Exterior" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Building Exterior</div>
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="contact-content">
+                <h2 class="contact-title">Ready to Secure Your Space?</h2>
+                <p class="contact-subtitle">
+                    Don't miss this opportunity - Contact us today!
+                </p>
+
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">📞</div>
+                        <h3>Call Now</h3>
+                        <p>Viber: +1(609)742-6985</p>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email Us</h3>
+                        <p>
+                            <a href="mailto:667capitolblvd@gmail.com"
+                                >667capitolblvd@gmail.com</a
+                            >
+                        </p>
+                    </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(1)">
-                    <img src="/images/outside-2.jpg" alt="Building Exterior" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Building Exterior</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(1)">
-                    <img src="/images/outside-3.jpg" alt="Building Exterior" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Building Exterior</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(1)">
-                    <img src="/images/outside-4.jpg" alt="Building Exterior" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Building Exterior</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(2)">
-                    <img src="/images/first-1.jpg" alt="First Floor Interior" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">First Floor Interior</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(2)">
-                    <img src="/images/first-2.jpg" alt="First Floor Interior" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">First Floor Interior</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="/images/second-1.jpg" alt="Second Floor Space" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Second Floor Space</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="/images/second-2.jpg" alt="Second Floor Space" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Second Floor Space</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="/images/second-3.jpg" alt="Second Floor Space" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Second Floor Space</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="/images/second-4.jpg" alt="Second Floor Space" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Second Floor Space</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="/images/second-5.jpg" alt="Second Floor Space" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Second Floor Space</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="/images/second-6.jpg" alt="Second Floor Space" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Second Floor Space</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="/images/second-7.jpg" alt="Second Floor Space" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Second Floor Space</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="/images/second-8.jpg" alt="Second Floor Space" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Second Floor Space</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="/images/second-9.jpg" alt="Second Floor Space" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Second Floor Space</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(4)">
-                    <img src="/images/inside-1.jpg" alt="Street View" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Inside</div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(4)">
-                    <img src="/images/inside-2.jpg" alt="Street View" style="width: 100%; height: 100%; object-fit: cover;">
-                    <!-- Fallback placeholder if image doesn't load -->
-                    <div class="gallery-placeholder" style="position: absolute; top: 0; left: 0; z-index: -1;">Inside</div>
-                </div>
+
+                <a href="mailto:667capitolblvd@gmail.com" class="cta-primary"
+                    >Get in Touch Now</a
+                >
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-text">
+                    Commercial Space for Rent - 667 Capitol Blvd, San Fernando,
+                    Pampanga
+                </p>
+                <p class="footer-text">
+                    For inquiries, please
+                    <a href="mailto:667capitolblvd@gmail.com"
+                        >contact property owners</a
+                    >
+                </p>
+                <p class="footer-copyright">
+                    © 2025 All Rights Reserved. Property of 667 Capitol Blvd.
+                </p>
+            </div>
+        </footer>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+            <div class="lightbox-content" onclick="event.stopPropagation()">
+                <button class="lightbox-close" onclick="closeLightbox()">
+                    ×
+                </button>
+                <img
+                    id="lightbox-image"
+                    src=""
+                    alt="Full size image"
+                    style="
+                        max-width: 100%;
+                        max-height: 100%;
+                        border-radius: 8px;
+                    "
+                />
             </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="contact-content">
-            <h2 class="contact-title">Ready to Secure Your Space?</h2>
-            <p class="contact-subtitle">Don't miss this opportunity - Contact us today!</p>
+        <script>
+            // Carousel functionality
+            let slideIndex = 1;
+            let autoSlideInterval;
 
-            <div class="contact-methods">
-                <div class="contact-method">
-                    <div class="contact-icon">📞</div>
-                    <h3>Call Now</h3>
-                    <p>Viber: +1(609)742-6985</p>
-                </div>
-                <div class="contact-method">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email Us</h3>
-                    <p><a href="mailto:667capitolblvd@gmail.com">667capitolblvd@gmail.com</a></p>
-                </div>
-            </div>
+            function currentSlide(n) {
+                clearInterval(autoSlideInterval);
+                showSlide((slideIndex = n));
+                startAutoSlide();
+            }
 
-            <a href="#" class="cta-primary" onclick="alert('Add your contact information here')">Get in Touch Now</a>
-        </div>
-    </section>
+            function showSlide(n) {
+                let slides = document.getElementsByClassName("carousel-slide");
+                let dots = document.getElementsByClassName("carousel-dot");
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p class="footer-text">Commercial Space for Rent - 667 Capitol Blvd, San Fernando, Pampanga</p>
-            <p class="footer-text">For inquiries, please <a href="mailto:667capitolblvd@gmail.com">contact property owners</a></p>
-            <p class="footer-copyright">© 2025 All Rights Reserved. Property of 667 Capitol Blvd.</p>
-        </div>
-    </footer>
+                if (n > slides.length) slideIndex = 1;
+                if (n < 1) slideIndex = slides.length;
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <div class="lightbox-content" onclick="event.stopPropagation()">
-            <button class="lightbox-close" onclick="closeLightbox()">×</button>
-            <img id="lightbox-image" src="" alt="Full size image" style="max-width: 100%; max-height: 100%; border-radius: 8px;">
-        </div>
-    </div>
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove("active");
+                }
 
-    <script>
-        // Carousel functionality
-        let slideIndex = 1;
-        let autoSlideInterval;
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].classList.remove("active");
+                }
 
-        function currentSlide(n) {
-            clearInterval(autoSlideInterval);
-            showSlide(slideIndex = n);
+                slides[slideIndex - 1].classList.add("active");
+                dots[slideIndex - 1].classList.add("active");
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(() => {
+                    slideIndex++;
+                    showSlide(slideIndex);
+                }, 5000);
+            }
+
+            // Start auto-slide on page load
             startAutoSlide();
-        }
 
-        function showSlide(n) {
-            let slides = document.getElementsByClassName('carousel-slide');
-            let dots = document.getElementsByClassName('carousel-dot');
+            // Lightbox functionality
+            function openLightbox(n) {
+                const galleryItems =
+                    document.querySelectorAll(".gallery-item img");
+                const lightboxImage = document.getElementById("lightbox-image");
 
-            if (n > slides.length) slideIndex = 1;
-            if (n < 1) slideIndex = slides.length;
+                if (
+                    galleryItems[n - 1] &&
+                    galleryItems[n - 1].src &&
+                    galleryItems[n - 1].src !== ""
+                ) {
+                    lightboxImage.src = galleryItems[n - 1].src;
+                    lightboxImage.alt = galleryItems[n - 1].alt;
+                }
 
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove('active');
+                document.getElementById("lightbox").classList.add("active");
+                document.body.style.overflow = "hidden";
             }
 
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].classList.remove('active');
+            function closeLightbox() {
+                document.getElementById("lightbox").classList.remove("active");
+                document.body.style.overflow = "auto";
             }
 
-            slides[slideIndex - 1].classList.add('active');
-            dots[slideIndex - 1].classList.add('active');
-        }
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(
+                        this.getAttribute("href"),
+                    );
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    }
+                });
+            });
 
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(() => {
-                slideIndex++;
-                showSlide(slideIndex);
-            }, 5000);
-        }
-
-        // Start auto-slide on page load
-        startAutoSlide();
-
-        // Lightbox functionality
-        function openLightbox(n) {
-            const galleryItems = document.querySelectorAll('.gallery-item img');
-            const lightboxImage = document.getElementById('lightbox-image');
-
-            if (galleryItems[n-1] && galleryItems[n-1].src && galleryItems[n-1].src !== '') {
-                lightboxImage.src = galleryItems[n-1].src;
-                lightboxImage.alt = galleryItems[n-1].alt;
-            }
-
-            document.getElementById('lightbox').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+            // Parallax effect on hero section
+            window.addEventListener("scroll", () => {
+                const scrolled = window.pageYOffset;
+                const heroOverlay = document.querySelector(".hero-overlay");
+                if (heroOverlay && scrolled < window.innerHeight) {
+                    heroOverlay.style.transform = `translateY(${scrolled * 0.5}px)`;
                 }
             });
-        });
-
-        // Parallax effect on hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroOverlay = document.querySelector('.hero-overlay');
-            if (heroOverlay && scrolled < window.innerHeight) {
-                heroOverlay.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-    </script>
-</body>
+        </script>
+    </body>
 </html>
