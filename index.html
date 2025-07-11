@@ -681,7 +681,7 @@
                 <div class="hero-badge">Now Available</div>
                 <h1 class="hero-title">667 Capitol Boulevard Commercial Property for Lease</h1>
                 <p class="hero-subtitle">Prime Location near Capitol Town Megaworld</p>
-                
+
                 <div class="hero-features">
                     <div class="hero-feature">
                         <span>📍</span>
@@ -763,27 +763,27 @@
             <div class="details-grid">
                 <div class="detail-card">
                     <div class="detail-icon">📐</div>
-                    <div class="detail-title">Floor Area</div>
-                    <div class="detail-value">Available</div>
-                    <p>Spacious layout</p>
+                    <div class="detail-title">Stall Sizes</div>
+                    <div class="detail-value">Various</div>
+                    <p>Multiple stall options</p>
                 </div>
                 <div class="detail-card">
                     <div class="detail-icon">💡</div>
                     <div class="detail-title">Utilities</div>
-                    <div class="detail-value">Complete</div>
-                    <p>Electricity & Water ready</p>
+                    <div class="detail-value">Available</div>
+                    <p>Basic connections ready</p>
                 </div>
                 <div class="detail-card">
-                    <div class="detail-icon">📅</div>
-                    <div class="detail-title">Availability</div>
-                    <div class="detail-value">Immediate</div>
-                    <p>Move-in ready</p>
+                    <div class="detail-icon">🔨</div>
+                    <div class="detail-title">Condition</div>
+                    <div class="detail-value">Customizable</div>
+                    <p>Ready for renovation</p>
                 </div>
                 <div class="detail-card">
                     <div class="detail-icon">🏪</div>
                     <div class="detail-title">Ideal For</div>
                     <div class="detail-value">Any Business</div>
-                    <p>Retail, Office, Clinic</p>
+                    <p>Retail, Office, Clinic, Cafes</p>
                 </div>
             </div>
         </div>
@@ -993,18 +993,18 @@
         function showSlide(n) {
             let slides = document.getElementsByClassName('carousel-slide');
             let dots = document.getElementsByClassName('carousel-dot');
-            
+
             if (n > slides.length) slideIndex = 1;
             if (n < 1) slideIndex = slides.length;
-            
+
             for (let i = 0; i < slides.length; i++) {
                 slides[i].classList.remove('active');
             }
-            
+
             for (let i = 0; i < dots.length; i++) {
                 dots[i].classList.remove('active');
             }
-            
+
             slides[slideIndex - 1].classList.add('active');
             dots[slideIndex - 1].classList.add('active');
         }
@@ -1023,12 +1023,12 @@
         function openLightbox(n) {
             const galleryItems = document.querySelectorAll('.gallery-item img');
             const lightboxImage = document.getElementById('lightbox-image');
-            
+
             if (galleryItems[n-1] && galleryItems[n-1].src && galleryItems[n-1].src !== '') {
                 lightboxImage.src = galleryItems[n-1].src;
                 lightboxImage.alt = galleryItems[n-1].alt;
             }
-            
+
             document.getElementById('lightbox').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
