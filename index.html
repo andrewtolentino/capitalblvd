@@ -383,90 +383,92 @@
             }
 
             /* Floor Plans Section */
-            .floors-section {
-                padding: 4rem 1rem;
-                background: #f8f9fa;
-            }
+         
+        .floors-section {
+            padding: 4rem 1rem;
+            background: #f8f9fa;
+        }
 
-            .floors-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                gap: 3rem;
-                margin-top: 3rem;
-            }
+        .floors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
 
-            .floor-card {
-                position: relative;
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-                background: white;
-            }
+        .floor-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background: white;
+            cursor: pointer;
+        }
 
-            .floor-card:hover {
-                transform: scale(1.02);
-                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-            }
+        .floor-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
 
-            .floor-image {
-                width: 100%;
-                height: 300px;
-                background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #6c757d;
-                font-size: 1.2rem;
-                position: relative;
-                overflow: hidden;
-            }
+        .floor-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
 
-            .floor-image img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+        .floor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-            .floor-info {
-                padding: 2rem;
-                background: white;
-            }
+        .floor-info {
+            padding: 2rem;
+            background: white;
+        }
 
-            .floor-label {
-                background: #ff6b6b;
-                color: white;
-                padding: 0.3rem 1rem;
-                border-radius: 20px;
-                font-size: 0.9rem;
-                display: inline-block;
-                margin-bottom: 1rem;
-            }
+        .floor-label {
+            background: #ff6b6b;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
 
-            .floor-title {
-                font-size: 1.8rem;
-                color: #1e3c72;
-                margin-bottom: 1rem;
-            }
+        .floor-title {
+            font-size: 1.8rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
 
-            .floor-features {
-                list-style: none;
-                margin-top: 1rem;
-            }
+        .floor-features {
+            list-style: none;
+            margin-top: 1rem;
+        }
 
-            .floor-features li {
-                padding: 0.5rem 0;
-                color: #666;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
+        .floor-features li {
+            padding: 0.5rem 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-            .floor-features li::before {
-                content: "✓";
-                color: #28a745;
-                font-weight: bold;
-            }
+        .floor-features li::before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+        }
 
             /* Gallery Grid Section */
             .gallery-grid-section {
@@ -881,106 +883,57 @@
                 </div>
             </div>
         </section>
+    <!-- Floor Plans -->
+    <section class="floors-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">AvailableSpaces</h2>
+                <p class="section-subtitle">Choose the perfect floor for your business</p>
+            </div>
 
-        <!-- Floor Plans -->
-        <section class="floors-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Available Spaces</h2>
-                    <p class="section-subtitle">
-                        Choose the perfect floor for your business
-                    </p>
-                </div>
-
-                <div class="floors-grid">
-                    <div class="floor-card" onclick="openLightbox(18)">
-                        <div class="floor-image">
-                            <img
-                                src="/images/floorplan-1.jpg"
-                                alt="First Floor Layout"
-                                style="
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: cover;
-                                "
-                            />
-                            <!-- Fallback placeholder if image doesn't load -->
-                            <div
-                                style="
-                                    position: absolute;
-                                    top: 0;
-                                    left: 0;
-                                    width: 100%;
-                                    height: 100%;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    z-index: -1;
-                                "
-                            >
-                                <span>📐 First Floor Layout</span>
-                            </div>
-                        </div>
-                        <div class="floor-info">
-                            <span class="floor-label">Ground Floor</span>
-                            <h3 class="floor-title">First Floor Spaces</h3>
-                            <p>
-                                Prime ground floor stalls with street visibility
-                                - bare shell ready for your design
-                            </p>
-                            <ul class="floor-features">
-                                <li>Street-level entrance</li>
-                                <li>High visibility storefront</li>
-                                <li>Customer parking</li>
-                            </ul>
+            <div class="floors-grid">
+                <div class="floor-card" onclick="openFloorImage(1)">
+                    <div class="floor-image">
+                        <img id="floor-image-1" src="/images/floorplan-1.jpg" alt="First Floor Layout" style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: -1;">
+                            <span>📐 First Floor Layout</span>
                         </div>
                     </div>
+                    <div class="floor-info">
+                        <span class="floor-label">Ground Floor</span>
+                        <h3 class="floor-title">First Floor Stalls</h3>
+                        <p>Prime ground floor stalls with street visibility - bare shell ready for your design</p>
+                        <ul class="floor-features">
+                            <li>Street-level entrance</li>
+                            <li>High visibility storefront</li>
+                            <li>Customer parking</li>
+                        </ul>
+                    </div>
+                </div>
 
-                    <div class="floor-card"  onclick="openLightbox(19)">
-                        <div class="floor-image">
-                            <img
-                                src="/images/floorplan-2.jpg"
-                                alt="Second Floor Layout"
-                                style="
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: cover;
-                                "
-                            />
-                            <!-- Fallback placeholder if image doesn't load -->
-                            <div
-                                style="
-                                    position: absolute;
-                                    top: 0;
-                                    left: 0;
-                                    width: 100%;
-                                    height: 100%;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    z-index: -1;
-                                "
-                            >
-                                <span>📐 Second Floor Layout</span>
-                            </div>
+                <div class="floor-card" onclick="openFloorImage(2)">
+                    <div class="floor-image">
+                        <img id="floor-image-2" src="/images/floorplan-2.jpg" alt="Second Floor Layout" style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: -1;">
+                            <span>📐 Second Floor Layout</span>
                         </div>
-                        <div class="floor-info">
-                            <span class="floor-label">Upper Floor</span>
-                            <h3 class="floor-title">Second Floor Spaces</h3>
-                            <p>
-                                Upper level stalls ideal for services - design
-                                your own professional space
-                            </p>
-                            <ul class="floor-features">
-                                <li>Private office environments</li>
-                                <li>Multiple stalls</li>
-                                <li>Build out to your specifications</li>
-                            </ul>
-                        </div>
+                    </div>
+                    <div class="floor-info">
+                        <span class="floor-label">Upper Floor</span>
+                        <h3 class="floor-title">Second Floor Stalls</h3>
+                        <p>Upper level stalls ideal for services - design your own professional space</p>
+                        <ul class="floor-features">
+                            <li>Private office environments</li>
+                            <li>Multiple stalls</li>
+                            <li>Build out to your specifications</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Gallery Grid -->
         <section class="gallery-grid-section" id="gallery">
@@ -1452,6 +1405,24 @@
                 document.getElementById("lightbox").classList.remove("active");
                 document.body.style.overflow = "auto";
             }
+        // Open floor plan images in lightbox
+        function openFloorImage(n) {
+            const floorImage = document.getElementById('floor-image-' + n);
+            const lightboxImage = document.getElementById('lightbox-image');
+            
+            if (floorImage && floorImage.src && floorImage.src !== '') {
+                lightboxImage.src = floorImage.src;
+                lightboxImage.alt = floorImage.alt;
+            }
+            
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
 
             // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
